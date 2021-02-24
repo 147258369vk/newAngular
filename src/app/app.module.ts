@@ -9,6 +9,7 @@ import { TemplateformComponent } from './templateform/templateform.component';
 //forms modules
 
 import { FormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 //Angular material icons
@@ -17,6 +18,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 
 
 
@@ -24,7 +26,8 @@ import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
-    TemplateformComponent
+    TemplateformComponent,
+    ReactiveformComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
