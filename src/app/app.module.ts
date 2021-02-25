@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TemplateformComponent } from './templateform/templateform.component';
+
 
 //forms modules
 
@@ -19,6 +19,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { TemplateformComponent } from './templateform/templateform.component';
 
 
 
@@ -26,8 +27,8 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TemplateformComponent,
-    ReactiveformComponent
+    ReactiveformComponent,
+    TemplateformComponent
   ],
   imports: [
     BrowserModule,

@@ -1,31 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-templateform',
   templateUrl: './templateform.component.html',
-  styleUrls: ['./templateform.component.css']
+  styleUrls:['./templateform.component.css']
 })
-export class TemplateformComponent implements OnInit {
-
-  details=[];
-  // name:string='',
-  // email:string
+export class TemplateformComponent implements OnInit{
   constructor() { }
 
   ngOnInit(): void {
   }
 
-
-  getValues(f:NgForm)
-  {
-    console.log(f.value);
-
-    this.details=f.value;
+  model={
+    username:'',
   }
 
-  getdetails(name:HTMLInputElement,email:HTMLInputElement)
+  getvalues(f:NgForm)
   {
-    console.log(name+ " and " +email);
+    alert("form submitted");
   }
+
 }

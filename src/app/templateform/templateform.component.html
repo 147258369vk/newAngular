@@ -1,86 +1,41 @@
 <mat-card>
-  <mat-toolbar>Template Driven Form</mat-toolbar>
-  <br><br>
+  <mat-toolbar>Template Form</mat-toolbar>
 
-  <form #userform="ngForm" (ngSubmit)="getValues(userform)">
+  <br><br>
+  <form name="form" #userform="ngForm" (ngSubmit)="userform.form.valid && getvalues(userform)" novalidate>
 
     <mat-form-field>
-      <input
-      type="text"
-      matInput
-      placeholder="Your Name"
-      ngModel
-      name="username"
-      >
-      </mat-form-field>
-
-      <br><br>
-
-      <mat-form-field>
-      <input
-      type="text"
-      matInput
-      placeholder="Your Email"
-      ngModel
-      name="useremail">
-    </mat-form-field>
-
-      <br><br>
-
-      <mat-form-field>
-      <input
-      type="text"
-      matInput
-      placeholder="Location"
-      ngModel
-      name="location">
-    </mat-form-field>
-
-      <br><br>
-
-      <mat-form-field>
-      <input
-      type="text"
-      matInput
-      placeholder="Profile"
-      ngModel
-      name="profile">
-    </mat-form-field>
-
-      <br><br>
-      <button
-      type="submit"
-      mat-raised-button
-      color="primary">
-      Submit
-    </button>
-
-
-
-  </form>
-</mat-card>
-
-<br><br>
-
-<mat-card>
-  <mat-form-field>
-    <input type="text"
-    #username
+    <input
+    type="text"
     matInput
-    placeholder="Name">
+    required
+    [(ngModel)]="model.username"
+    name="username"
+    #username="ngModel"
+    minlength="5"
+    [ngClass]="{'is-invalid':userform.submitted && username.invalid}">
 
    </mat-form-field>
 
-<br><br>
-   <mat-form-field>
-    <br><br>
-    <input type="text"
-    #email
-    matInput
-    placeholder="email"
-    >
-    </mat-form-field>
 
-    <br><br>
-    <button mat-raised-button color="accent" (click)="getdetails(username,email)">Submit</button>
+  <mat-error *ngIf="userform.submitted && username.invalid">
+
+  <mat-error *ngIf="username.errors?.required">
+    Name should be entered
+  </mat-error>
+
+
+  <mat-error *ngIf="username.errors?.minlength">
+    Name should be greater than 5 characters
+  </mat-error>
+
+  </mat-error>
+  <br><br>
+
+
+
+  <button type="submit" mat-raised-button color="primary">Submit</button>
+  </form>
+
+
 </mat-card>
